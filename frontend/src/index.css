@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: #f8fafc;
+    color: #0f172a;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  ::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #f1f5f9;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #059669;
+  }
+}
+
+@layer components {
+  /* Card / panel surface */
+  .glass-panel {
+    @apply bg-white border border-slate-200 rounded-xl shadow-sm;
+  }
+
+  /* Table row */
+  .risk-row {
+    @apply border-b border-slate-100 hover:bg-slate-50 transition-colors cursor-pointer;
+  }
+
+  /* Pill badge */
+  .badge {
+    @apply inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium;
+  }
+
+  /* Primary action button */
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-4 py-2 bg-emerald-600 hover:bg-emerald-500
+           text-white font-medium rounded-lg transition-all duration-200
+           active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed shadow-sm;
+  }
+
+  /* Secondary ghost button */
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 px-4 py-2 bg-white hover:bg-slate-50
+           text-slate-700 font-medium rounded-lg transition-all duration-200
+           border border-slate-200 shadow-sm;
+  }
+}
+
+@keyframes fadeIn {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes slideIn {
+  0%   { transform: translateX(100%); opacity: 0; }
+  100% { transform: translateX(0);    opacity: 1; }
+}
+
+@keyframes slideUp {
+  0%   { transform: translateY(16px); opacity: 0; }
+  100% { transform: translateY(0);    opacity: 1; }
+}
+
+.animate-fade-in   { animation: fadeIn  0.3s ease-out; }
+.animate-slide-in  { animation: slideIn 0.3s ease-out; }
+.animate-slide-up  { animation: slideUp 0.35s ease-out; }

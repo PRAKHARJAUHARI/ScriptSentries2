@@ -1,0 +1,36 @@
+# --- Java & Backend (Maven/Gradle) ---
+**/target/
+**/bin/
+**/*.class
+**/*.jar
+**/*.war
+**/*.ear
+**/.mvn/
+.gradle/
+build/
+
+# --- Frontend (Node/React/Vue) ---
+**/node_modules/
+**/dist/
+**/build/
+.eslintcache
+npm-debug.log*
+
+# --- Environment & Secrets ---
+**/.env
+**/.env.local
+**/.env.*.local
+**/config/application-dev.properties
+**/config/application-prod.properties
+
+# --- IDE Specific (IntelliJ, VS Code, Eclipse) ---
+.idea/
+*.iml
+.vscode/
+.project
+.settings/
+.classpath
+
+# --- OS Specific ---
+.DS_Store
+Thumbs.db
